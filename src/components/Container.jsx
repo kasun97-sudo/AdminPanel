@@ -29,6 +29,9 @@ export default function SimpleContainer() {
     );
     console.log(response2.data.sales);
     setSales(response2.data.sales);
+    const reponse3 = await Axios.get(
+      ""
+    )
   }
 
   React.useEffect(() => {

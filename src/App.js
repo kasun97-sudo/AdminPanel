@@ -3,6 +3,10 @@ import SignIn from './components/SignIn';
 import Home from './components/Home';
 import Products from './components/Products';
 import Reports from './components/Reports';
+import ForgotPassword from './components/ForgotPassword';
+import ChangePassword from './components/ChangePassword';
+import SuccessEmail from './components/EmailSuccess';
+import ChangeSuccess from './components/ChangeSuccess';
 import {BrowserRouter , Routes , Route} from 'react-router-dom';
 import {useState , useContext , useEffect} from 'react';
 import UserContext from './Context/UserContext';
@@ -23,6 +27,10 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/reports" element={<Reports />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/changepassword/:id/:token" element={<ChangePassword />} />
+        <Route path="/successemail" element={<SuccessEmail />} />
+        <Route path="/successchange" element={<ChangeSuccess />} />
       </Routes>
       </UserContext.Provider>
     </BrowserRouter>
