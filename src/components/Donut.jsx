@@ -2,13 +2,35 @@ import React from 'react';
 import Chart from 'react-apexcharts'
 
 
-function DonutSimple(){
+function DonutSimple(props){
+
+    React.useEffect(() => {
+        // setState(prevState => ({
+        //     options : {
+        //         ...prevState.options
+        //       },
+        //     series : prevState.series.map(el => {
+                
+        //     })
+        // }))
+        setState({
+            options:{},
+            series : props.types,
+            chartOptions: {
+                labels: ["apple", 'Mango', 'Orange', 'Watermelon']
+            }
+        })
+    } , [props.types]);
 
     const [state , setState] = React.useState({
         options: {},
-        series: [44, 55, 41, 17, 15],
-        labels: ['A', 'B', 'C', 'D', 'E']
-    })
+        series: [0,0,0,0],
+        chartOptions: {
+            labels: ['Apple', 'Mango', 'Orange', 'Watermelon']
+        }
+    });
+
+
 
 
     return (

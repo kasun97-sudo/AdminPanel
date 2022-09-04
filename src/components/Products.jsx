@@ -43,7 +43,7 @@ function Products() {
                         return val;
                     }
                 }).map(product =>{
-                    return <Product key={product._id} product={product} products={products} setProducts={setProducts}/>
+                    return <Product key={product._id} product={product} products={products} setProducts={setProducts} image={product.image}/>
                 })}
             </Container>
             </React.Fragment>

@@ -113,10 +113,10 @@ const Navbar = ({navigation}) => {
                 Reports
               </Button>
               <Button
-                onClick={handleCloseNavMenu}
+                onClick={() => navigate('/addadmin')}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                Auction Panel
+                Add admin
               </Button>
           </Box>
           <h3 style={{margin : '10px'}}>{localStorage.getItem('user')}</h3> 

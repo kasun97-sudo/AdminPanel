@@ -7,6 +7,7 @@ import ForgotPassword from './components/ForgotPassword';
 import ChangePassword from './components/ChangePassword';
 import SuccessEmail from './components/EmailSuccess';
 import ChangeSuccess from './components/ChangeSuccess';
+import Addadmin from './components/Addadmin';
 import {BrowserRouter , Routes , Route} from 'react-router-dom';
 import {useState , useContext , useEffect} from 'react';
 import UserContext from './Context/UserContext';
@@ -31,6 +32,7 @@ function App() {
         <Route path="/changepassword/:id/:token" element={<ChangePassword />} />
         <Route path="/successemail" element={<SuccessEmail />} />
         <Route path="/successchange" element={<ChangeSuccess />} />
+        <Route path="/addadmin" element={<Addadmin />} />
       </Routes>
       </UserContext.Provider>
     </BrowserRouter>

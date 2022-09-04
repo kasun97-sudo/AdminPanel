@@ -16,6 +16,7 @@ export default function SimpleContainer() {
 
   const [details , setDetails] = useState({});
   const [sales , setSales] = useState([]);
+  const [types , setTypes] = useState([]);
 
   const getDetails = async () => {
     const response1 = await Axios.get(
@@ -29,9 +30,12 @@ export default function SimpleContainer() {
     );
     console.log(response2.data.sales);
     setSales(response2.data.sales);
-    const reponse3 = await Axios.get(
-      ""
-    )
+    const response3 = await Axios.get(
+      "http://localhost:3001/api/auth/gettypes",
+      null
+    );
+    setTypes(response3.data);
+    console.log(response3.data);
   }
 
   React.useEffect(() => {
@@ -73,7 +77,9 @@ export default function SimpleContainer() {
         </div>
         <div style={{margin : 20 ,border : '1px solid' , alignItems : 'center' , justifyContent : 'center' , display : 'flex' , flexDirection : 'column'  , borderRadius : 10}}>
         <h2>User Types</h2>
-        <Donut />
+        {
+          types ? <Donut types={types}/> : <div></div>
+        }
         </div>
       </Container>
     </React.Fragment>

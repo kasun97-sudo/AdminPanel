@@ -25,7 +25,7 @@ function Product(props){
                     <CardMedia
                     component="img"
                     height="140"
-                    image={Carrot}
+                    image={"http://localhost:3001/post-img/"+props.image}
                     alt="green iguana"
                     />
                     <CardContent>
